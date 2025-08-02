@@ -87,5 +87,6 @@ class Program
         PrintLocations("Car Possible Locations:", carLocs);
         PrintLocations("Human Possible Locations:", humanLocs);
         PrintLocations("Animal Possible Locations:", animalLocs);
+        Console.WriteLine("end");
     }
 }
