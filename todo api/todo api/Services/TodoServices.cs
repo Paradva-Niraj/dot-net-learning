@@ -5,7 +5,7 @@ namespace todo_api.Services
     public class TodoServices
     {
         private readonly List<TodoItem> _item = new();
-        private int _nextId = 1;
+        private int _nextId = 0;
 
         public IEnumerable<TodoItem> GetAll() => _item;
 
@@ -31,7 +31,9 @@ namespace todo_api.Services
         }
         public bool Delete(int id)
         {
+
             var item = GetById(id);
+            item.id = ++_nextId;
             return item != null && _item.Remove(item);
         }
     }
